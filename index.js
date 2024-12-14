@@ -15,8 +15,6 @@ app.set("views","./views");
 connectToDB("mongodb://127.0.0.1:27017/blogDB") .then(() => console.log("MongoDB connected"));
 
 app.use("/",staticUrl);
-
-  // Server
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
