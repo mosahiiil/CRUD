@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: rgb(15, 27, 44);
+          padding: 0 40px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+        }
+        .child-post{
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 40%;
+            padding: 20px 5px;
+            margin: 10px 0;
+        }
+        .child-post a{
+            color: rgb(255, 255, 255);
+        }
+        .child-post button{
+            background-color: red;
+            color:  white;
+            text-decoration: none;
+            padding: 8px;
+            font-size: larger;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .Create-post
+        {
+            background-color: green;
+            color:  white;
+            text-decoration: none;
+            padding: 8px;
+            font-size: larger;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to My Blog</h1>
+    <a href="/blogs/new" class="Create-post">Create New Blog</a>
+    <div class="parent">
+      <% blogs.forEach(blog => { %>
+        <div class="child-post" >
+          <h2><a href="/blogs/<%= blog._id %>"><%= blog.title %></a></h2>
+          <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

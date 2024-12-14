@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: rgb(15, 27, 44);
+          padding: 0 40px;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            text-decoration: underline;
+        }
+        p{
+            color: white;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+        a{
+            
+            background-color: blue;
+            font-weight: 500;
+            color:  white;
+            text-decoration: none;
+            padding: 5px;
+            font-size: larger;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        a:hover{
+            background-color: darkblue;
+            color: white;
+            text-decoration: none;
+        }
+        
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= blog.title %></h1>
+    <p><%= blog.body %></p>
+    <a href="/blogs/<%= blog._id %>/edit">Edit Blog</a>
+    <a href="/">Back to Home</a>
+  </body>
+</html>
